@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Game End {% endblock %}
+
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/game.jpg");}
+    </style>
+    <h2>Winner is {{ winner.user.first_name }}!!!</h2>
+    <div class="container">
+        <div class="col-md-8">
+
+            <table>
+                <tr> <h4> participants </h4>
+                   {% for p in player_states %}
+                        <tr> <p>Name: {{ p.player.user.first_name }} </p></tr>
+                        <tr> <p> Points earned : {{ p.point }}</p></tr>
+                   {% endfor %}
+                </tr>
+        </div>
+
+
+    </div>
+
+{% endblock %}

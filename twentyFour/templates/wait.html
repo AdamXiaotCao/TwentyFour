@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Waiting {% endblock %}
+
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/table-top-background.jpg");}
+    </style>
+   <div class="col-md-6">
+       <p></p>
+       <p></p>
+        <form action="{% url 'start_game' %}">
+            <!--should happen when there are the right number of players-->
+            <input class="btn btn-lg btn-primary btn-default" type="submit" value="Start Game" />
+            <input type="hidden" name="game_id" value="{{ game_id }}"/>
+        </form>
+   </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+
+Sprint1 recap
+Product Owner: Xiaotian Cao
+
+1. New users should be able to reigster. (completed)
+2. a complete models.py (completed)
+3. Using ModelForm to validate inputs (completed)
+4. implement an algorithm to compute all valid card combinations (completed)
+5. Players should be able play the game by themselves (completed)
+6. Should be able to determine if Player's answer is correct or not (completed)
+7. html templates for registration, user settings, lobby, game table, leaderboard. (failed to complete)
+8. some front-end design using bootstrap (failed to complete)
+9. Using JQuery to update list of all ongoing games (failed to complete)
+

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Login Page {% endblock %}
+
+{% block nav_content %}
+{% endblock %}
+    {% block nav_login %}
+        <ul class="nav navbar-nav navbar-right">
+            <li><form class="navbar-form navbar-right" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+                {{ form.username.label_tag }}
+            	{{ form.username }}
+            	{{ form.password.label_tag }}
+            	{{ form.password }}
+                <input class="btn btn-inverse" type="submit" value="Login" />
+                <input type="hidden" name="next" value="{{ next }}"/>
+                {% csrf_token %}
+            </form></li>
+            <li><a class="navbar-right" href="/twentyFour/register">Register</a></li>
+        </ul>
+{% endblock %}
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/24.jpg");}
+    </style>
+
+
+{% endblock %}

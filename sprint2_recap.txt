@@ -1,0 +1,23 @@
+Product Owner: Lucy Qian
+
+User:
+1. As an user, I should be able to reset my password at the settings page. (Lucy) (not completed)
+2. As an user, I should receive an email notification when I tries to reset my password. (Lucy) (not completed)
+
+Player:
+1. As a player, I should be able to create a new ‘table’ that allow other players to join and compete. (Xiaotian) (complete)
+2. As a player, I should be able to join other 'tables' and compete with others. (Xiaotian) (not complete)
+3. As a player, I should be able to see my past game performance on the home page. (Xiaotian) (not compelte)
+4. As a player, I should be able to check the leaderboard from the home page. (Lucy) (not complete)
+5. As a player, while competing with other players, I should get notified when other player finished card sets. (Xiaotian) (not complete)
+6. As a player, I should get/lose points after each game. (Lucy) (not complete)
+7. As a player, I should be able to see my total points so far on the home page. (Lucy) (not complete)
+
+
+Note:
+We spent more time on making the UI look better and setting up the backend rather than what we thought we would do.
+Instead on focusing on some of the functionalities that are similar to that of grumblr, we decided to implement more backbone
+for the game itself. We managed to make a multiplayer table for the users to join and by what was completed in the backend, 
+we should've been able to join those tables with other players. Because we needed the information that came from the players
+actually joining the tables and playing the game, a lot of our print's goals could not be completed. We will complete them
+in the third and final sprint, when we add in ajax and javascript.

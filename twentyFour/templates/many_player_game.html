@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Game Page {% endblock %}
+
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/game.jpg");}
+    </style>
+    <div class="col-md-5">
+        <div class="container" id="display_time">
+            <!--Display time left here-->
+        </div>
+
+        <div class="container" id="display_card">
+            <!--Show current card to solve here-->
+            <!--<h6> Card Set </h6>-->
+            {{sets}}
+            <!--{% for card in sets %}-->
+                <!--<p> Value: {card} </p>-->
+            <!--{% endfor %}-->
+        </div>
+        <div class="container" id="display_result">
+
+        </div>
+        <div class="container">
+            {% if 'WAIT' in game_status %}
+                <form action="{% url 'start_game' %}">
+                    <!--should happen when there are the right number of players-->
+                    {% ifequal owner player %}
+                    <input class="btn btn-lg btn-primary btn-default" type="submit" value="Start Game" />
+                    {% else %}
+                        <p>Please Wait for the table owner to start the game</p>
+                    {% endifequal %}
+                    <input type="hidden" name="newset" value="{{ newset }}"/>
+                    <input type="hidden" name="num1" value="{{num1}}"/>
+                    <input type="hidden" name="num2" value="{{num2}}"/>
+                    <input type="hidden" name="num3" value="{{num3}}"/>
+                    <input type="hidden" name="num4" value="{{num4}}"/>
+                    <input type="hidden" name="game_id" id="gid" value="{{ game_id }}"/>
+
+                </form>
+            {% else %}
+                <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+                <form action='determine' method="post">
+                    <h2> Multiplayer Game Mode</h2>
+                    <h2> Card Set </h2>
+                    <img src="{% static newset1 %}" width="125" height="275">
+                    <img src="{% static newset2 %}" width="125" height="275">
+                    <img src="{% static newset3 %}" width="125" height="275">
+                    <img src="{% static newset4 %}" width="125" height="275">
+
+                    <h2>Enter your answer here</h2>
+                    <!--will need to pass in a form called user_input_form-->
+
+                    Answer: <input type="text" name="input">
+
+                    <input type="hidden" name="card" value={{newset}}>
+                    <input type="hidden" name="page" value="many">
+                    <input type="hidden" name="n1" value="{{num1}}"/>
+                    <input type="hidden" name="n2" value="{{num2}}"/>
+                    <input type="hidden" name="n3" value="{{num3}}"/>
+                    <input type="hidden" name="n4" value="{{num4}}"/>
+                    <input type="hidden" name="game_id" id="gid" value="{{ game_id }}"/>
+
+                    {% csrf_token %}
+                    <input class="btn btn-primary" type="submit"  id="submitbtn">
+                </form>
+                <h6> {{feedback}} </h6>
+                <h6> Your input evaluates to: {{output}}</h6>
+            {% endif %}
+        </div>
+    </div>
+    {% block score_list %}
+    {% endblock %}
+
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+    <h4> Players </h4>
+    <table style ="width:100%" id = "player_list">
+
+    </table>
+
+
+
+    </div>
+    <div class="col-md-3">
+       <h4> Number of Sets Solved </h4>
+        <table style ="width:100%"  id = "progress_list">
+
+        </table>
+
+    </div>
+    <script src ="{%static "js/get_players.js" %}"></script>
+    {% if 'WAIT' in game_status %}
+
+    <script src = "{%static "js/check_game.js" %}"> </script> 
+    {%endif%}
+    {%if 'ONGOING' in  game_status%}
+    <script src ="{%static "js/get_progress.js" %}"></script> 
+    <script src ="{%static "js/end_game.js "%}"> </script>
+    {%endif%}
+
+
+{% endblock %}

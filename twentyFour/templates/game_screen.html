@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Game Page {% endblock %}
+
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/game.jpg");}
+    </style>
+    <div class="col-md-6">
+        <div class="container" id="display_time">
+            <!--Display time left here-->
+        </div>
+            {{sets}}
+        </div>
+
+        <div class="container" id="display_result">
+
+        </div>
+
+        <div class="container">
+            <form action='determine' method="post">
+                <h2> Single Game Mode</h2>
+                <h2> Card Set </h2>
+                <!--{% for card in newset %}-->
+                    <!--<h6> Value: {{card}} </h6>-->
+                <!--{% endfor %}-->
+                   <img src="{% static  newset1 %}" width="125" height="275">
+
+                    <img src="{% static newset2 %}" width="125" height="275">
+                    <img src="{% static newset3 %}" width="125" height="275">
+                    <img src="{% static newset4 %}" width="125" height="275">
+
+                    
+                <h2>Enter your answer here</h2>
+                <!--will need to pass in a form called user_input_form-->
+
+                Answer: <input type="text" name="input">
+
+                <input type="hidden" name="card" value={{newset}}>
+                <input type="hidden" name="page" value="single">
+                <input type="hidden" name="n1" value="{{num1}}"/>
+                <input type="hidden" name="n2" value="{{num2}}"/>
+                <input type="hidden" name="n3" value="{{num3}}"/>
+                <input type="hidden" name="n4" value="{{num4}}"/>
+                {% csrf_token %}
+                <input class="btn btn-primary" type="submit">
+
+            </form>
+            <h6> {{feedback}} </h6>
+            <h6> Your input evaluates to: {{output}}</h6>
+        </div>
+    </div>
+    {% block score_list %}
+    {% endblock %}
+
+{% endblock %}
+

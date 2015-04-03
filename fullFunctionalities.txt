@@ -1,0 +1,29 @@
+complete list of all functionality
+
+1. new user should be able to register an account.
+2. users with an account should be able to login.
+3. users should be able to see their past performance and other statistics in their homepage.
+4. users can go to 'Lobby' page to see all ongoing games.
+5. on the 'Lobby' page, user can create a new game or join an ongoing game.
+6. While users are playing a game, their should see a set of cards and trying to solve the puzzle.
+7. the game is Timed.
+8. Users should be able to get feedbacks when they submit their answer.
+9. If User correctly solved the puzzle, they will recieve certain points and a new set of cards.
+10. Once the User complete 5 or 10 set of cards, user should be able to see the result compare to others. 
+11. User should be able to send an email along with scores to challenge her friends. 
+12. Users who recieved the email can click a link and automatically begin a game (If they already log in).
+13. User should be able to checkout the leaderboard.
+14. Leaderboard should have top users information.
+15. User can click on other users name and lead to their homepage to see more information.
+16. able to analyze past performace with graphs.
+
+
+
+How the game works:
+Players can enter the lobby and will be put in a game with four other players (1). 
+The players will then continue to solve multiple boards in as short of a period of time as possible (2). 
+As the game is going on, player input will be evaluated and recorded in the database by manipulation in the controls in the table for games and players. 
+This way, after starting the game, the player can just populate the part of the database for games with the game information and then make a request to the server after the game is done to get the results (should take care of real-time interaction by making it delayed) (3).  
+After the game is done, the players will be able to view how well they performed against people in  the same game. 
+The player can then check their performance over time (or number of games they played over time) to see if they improved or check the scoreboard to see how well they rank compared to other players (4,5). Instead of entering the lobby, the player will have an option of playing a game by themself, this game will then be recorded with the player's performance and can be sent to another player as a challenge (6), which the other player can also play to complete a game.
+

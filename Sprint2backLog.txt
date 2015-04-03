@@ -1,0 +1,16 @@
+Sprint 2 backlog
+
+Product Owner: Lucy Qian
+
+User:
+1. As an user, I should be able to reset my password at the settings page. (Lucy)
+2. As an user, I should receive an email notification when I tries to reset my password. (Lucy)
+
+Player:
+1. As a player, I should be able to create a new ‘table’ that allow other players to join and compete. (Xiaotian)
+2. As a player, I should be able to join other 'tables' and compete with others. (Xiaotian)
+3. As a player, I should be able to see my past game performance on the home page. (Xiaotian)
+4. As a player, I should be able to check the leaderboard from the home page. (Lucy)
+5. As a player, while competing with other players, I should get notified when other player finished card sets. (Xiaotian)
+6. As a player, I should get/lose points after each game. (Lucy)
+7. As a player, I should be able to see my total points so far on the home page. (Lucy)

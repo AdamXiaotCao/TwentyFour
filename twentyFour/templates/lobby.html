@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Lobby {% endblock %}
+
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/table-top-background.jpg");}
+    </style>
+   <div class="col-md-6">
+       <h1 style="color:white">Open Games</h1>
+       <ul id = "game_list">
+       {% for game in games %}
+            <div class="container">
+                {% for participant in game.participants %}
+                    <p>participant</p>
+                {% endfor %}
+                {% if game.participants|length < 4 %}
+                    <form action="{% url 'join' %}">
+                         <input class="btn btn-lg btn-primary btn-default" type="submit" value="Join Game" />
+                    </form>
+                {% endif %}
+            </div>
+       {% endfor %}
+        </ul>
+   </div>
+   <div class="col-md-6">
+       <p></p>
+       <p></p>
+        <form action="{% url 'create_game' %}">
+            <input class="btn btn-lg btn-primary btn-default" type="submit" value="Create Game" />
+        </form>
+   </div>
+	<script src ="{%static "js/update_lobby.js" %}"></script> 
+{% endblock %}

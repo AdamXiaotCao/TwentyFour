@@ -1,0 +1,12 @@
+User:
+1. As an user, I should be able to see the leaderboard
+2. As an user, I should be able to reset my password at settings page.
+3. As an user, I should receive an email notification when i tries to reset my password.
+
+Player:
+1. As a player, I should be able to join a table in the lobby
+2. As a player, I should be able to see who just joined my talbe
+3. As a player, I should be able to get notified when other player finished the cardset.
+4. As a player, I should be able to get/lose points after each game.
+5. As a player, I should be able to see my total points on the home page.
+

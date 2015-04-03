@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} Home Page {% endblock %}
+<!--TODO: user picture-->
+<!--TODO: lobby button, settings, pastperformance, ...-->
+{% block page_content %}
+    <style>
+        body {background-image: url("/static/background.jpg");}
+    </style>
+    <div class="col-md-6">
+        <img src="{% url 'photo' player.id %}" alt="{{player.user.first_name.value}} {{player.user.last_name.value}}" width="300" height="300">
+        <h4 style="color:white" >{{ player.user.username }}</h4>
+        <h2 style="color:white">Score Analysis</h2>
+        <table >
+            <tr style="color:white"><p style="color:white" >Total points : {{ player.total_points }} </p></tr>
+            <tr style="color:white"><p style="color:white" >Total games player: {{ player.total_games_played }}</p></tr>
+            <tr ><p style="color:white" > Total games won: {{ player.total_games_won }} </p></tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <form method="post" action="{% url 'single_game' %}">
+            <input class="btn btn-primary" type="submit" value="Start Single Game" />
+            {% csrf_token %}
+        </form>
+        <p></p>
+        <form action="{% url 'lobby' %}">
+            <input class="btn btn-primary" type="submit" value="   Go To Lobby   " />
+        </form>
+
+    </div>
+{% endblock %}
